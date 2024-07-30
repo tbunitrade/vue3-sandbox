@@ -11,16 +11,39 @@
 <body>
 <div id="app" class="container pt-5">
     <div class="card">
-        <h1>Count me {{counter}}</h1>
-        <div>
-            <button class="btn primary">+</button>
-            <button class="btn danger">-</button>
+        <h1>Count {{title}}</h1>
+        <div class="">
+            <input type="text"
+                   :placeholder="placeholderString"
+                   :value="inputValue"
+                   @input="inputChangeHandler"
+                   @keydown.enter="addNewNote"
+            >
         </div>
+<!--        <h2>inVal -> {{inputValue}}</h2>-->
+
+        <button class="btn" @:click="addNewNote" >Add</button>
+    </div>
+
+    <ul class="myUl" v-if="notes.length !== 0">
+        <li class="item" v-for="(myItem, idx) in notes">
+         ({{idx+1}}) {{toUpperCase(myItem)}}
+            <button class="btn danger" @:click="deleteCurrentNote(idx)" > delete </button>
+        </li>
+        <hr>
+        <li>
+            <strong>Summary of Notes : {{notes.length}}</strong> | Double: {{ doubleCountComputed }}
+        </li>
+    </ul>
+<!--    <div class="no-notes" v-if="notes.lenth === 0">-->
+<!--        No notes able for now.-->
+<!--    </div>-->
+    <div class="no-notes" v-else>
+        Sorry.
     </div>
 </div>
 
 
-<h1>Vue</h1>
 <script src="https://unpkg.com/vue@^3.4.34"></script>
 <script src="./app.js"></script>
 

@@ -1,3 +1,42 @@
 body{
 
 }
+
+
+input {
+    height: 40px;
+    width: 350px;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.item {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    background: #ccc;
+    border: none;
+    border-radius: 15px;
+    color: green;
+}
+
+.danger {
+    background: red;
+    color: white;
+}
+
+.btn:hover {
+    background: #000;
+    border: 1px solid black;
+}
+
