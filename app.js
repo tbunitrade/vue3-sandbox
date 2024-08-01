@@ -8,10 +8,11 @@ const App= {
         }
     },
     methods: {
-        inputChangeHandler(){
-            //console.log('inputChangeHandler', event.target.value);
-            this.inputValue = event.target.value;
-        },
+        // we add vue model to use this method
+        // inputChangeHandler(){
+        //     //console.log('inputChangeHandler', event.target.value);
+        //     this.inputValue = event.target.value;
+        // },
         addNewNote() {
             if(this.inputValue !=='') {
                 this.notes.push(this.inputValue);

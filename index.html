@@ -11,12 +11,12 @@
 <body>
 <div id="app" class="container pt-5">
     <div class="card">
-        <h1>Count {{title}}</h1>
+        <h1 >Count {{title}}</h1>
         <div class="">
             <input type="text"
                    :placeholder="placeholderString"
                    :value="inputValue"
-                   @input="inputChangeHandler"
+                   v-model="inputValue"
                    @keydown.enter="addNewNote"
             >
         </div>
