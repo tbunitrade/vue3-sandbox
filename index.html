@@ -10,55 +10,8 @@
 </head>
 <body>
 <div id="app" class="container pt-5">
-    <div class="card">
-        <h1 :style="{
-            color: inputValue.length < 5 ? 'darkred' : 'darkblue',
-            fontSize:inputValue.length < 6 ? '2rem' : '1.5rem'
-        }">Count {{title}}</h1>
-        <div class="">
-            <input type="text"
-                   :placeholder="placeholderString"
-                   :value="inputValue"
-                   v-model="inputValue"
-                   @keydown.enter="addNewNote"
-            >
-        </div>
-<!--        <h2>inVal -> {{inputValue}}</h2>-->
+    <div class="card center">
 
-        <button class="btn" @:click="addNewNote" >Add</button>
-    </div>
-
-    <ul class="myUl" v-if="notes.length !== 0">
-        <li class="item" v-for="(myItem, idx) in notes">
-<!--            <span :class="myItem.length > 5 ? 'primary' : 'bold' " >-->
-<!--                   ({{idx+1}}) {{toUpperCase(myItem)}}-->
-<!--            </span>-->
-
-<!--            <span :class="{-->
-<!--                'primary' : true,-->
-<!--                'bold' : myItem.length > 5-->
-<!--            }" >-->
-<!--                   ({{idx+1}}) {{toUpperCase(myItem)}}-->
-<!--            </span>-->
-
-            <span :class="['bold', { 'primary' : myItem.length > 5}]" >
-                   ({{idx+1}}) {{toUpperCase(myItem)}}
-            </span>
-
-
-
-            <button class="btn danger" @:click="deleteCurrentNote(idx)" > delete </button>
-        </li>
-        <hr>
-        <li>
-            <strong>Summary of Notes : {{notes.length}}</strong> | Double: {{ doubleCountComputed }}
-        </li>
-    </ul>
-<!--    <div class="no-notes" v-if="notes.lenth === 0">-->
-<!--        No notes able for now.-->
-<!--    </div>-->
-    <div class="no-notes" v-else>
-        Sorry.
     </div>
 </div>
 
