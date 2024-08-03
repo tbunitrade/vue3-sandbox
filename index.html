@@ -7,11 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to developers zone, Sierra Group Service</title>
     <link rel="stylesheet" href="./sierra-style.css">
+
+    <style>
+        [v-cloak] { display: none}
+    </style>
 </head>
 <body>
-<div id="app" class="container pt-5">
-    <div class="card center">
+<div id="app" class="container pt-5" v-cloak>
+    <div class="card center" >
+<!--        интерполяция-->
+        <div v-html="myHtml"></div>
+<!--        <h1 v-text="title"></h1>-->
+<!--        <h2 v-once>{{title}}</h2>-->
+<!--        <h2 v-pre>{{title}}</h2>-->
 
+<!--        <button class="btn" @click="title='Test2'">Change name </button>-->
+        <ul class="list">
+            <li
+                    class="list-item"
+                    v-for="(items, key) in items"
+                    @click="items.splice()"
+            >
+                <strong>
+                    {{ items }}
+                </strong>
+            </li>
+        </ul>
     </div>
 </div>
 
