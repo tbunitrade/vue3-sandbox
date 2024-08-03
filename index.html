@@ -25,11 +25,11 @@
         <ul class="list">
             <li
                     class="list-item"
-                    v-for="(items, key) in items"
-                    @click="items.splice()"
+                    v-for="(item, key) in items"
+                    @click="items.splice(key , 1)"
             >
                 <strong>
-                    {{ items }}
+                    {{ item }}
                 </strong>
             </li>
         </ul>
