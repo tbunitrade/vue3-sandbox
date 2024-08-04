@@ -16,36 +16,6 @@
 </head>
 <body>
 <div id="app" class="container pt-5" v-cloak>
-    <div class="card center">
-        <!--        интерполяция-->
-        <div v-html="myHtml"></div>
-        <!--        <h1 v-text="title"></h1>-->
-        <!--        <h2 v-once>{{title}}</h2>-->
-        <!--        <h2 v-pre>{{title}}</h2>-->
-
-        <!--        <button class="btn" @click="title='Test2'">Change name </button>-->
-
-        <div class="form-control">
-            <input type="text" @keyup.shift.enter.exact="addItem($event)" ref="myInput" >
-        </div>
-        <ul class="list" v-if="items.length">
-            <li
-                    class="list-item"
-                    v-for="(item, key) in items"
-                    @click.right.prevent="remove(i), log(item)"
-                    :key="item"
-            >
-                <strong>
-                    {{ item }}
-                </strong>&nbsp;
-
-                <!--                <input type="text" @click="stopPropagation" >-->
-                <input type="text" @click.stop>
-
-            </li>
-        </ul>
-        <h3 v-show="items.length === 0"> no elements</h3>
-    </div>
 </div>
 
 
