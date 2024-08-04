@@ -9,23 +9,25 @@
     <link rel="stylesheet" href="./sierra-style.css">
 
     <style>
-        [v-cloak] { display: none}
+        [v-cloak] {
+            display: none
+        }
     </style>
 </head>
 <body>
 <div id="app" class="container pt-5" v-cloak>
-    <div class="card center" >
-<!--        интерполяция-->
+    <div class="card center">
+        <!--        интерполяция-->
         <div v-html="myHtml"></div>
-<!--        <h1 v-text="title"></h1>-->
-<!--        <h2 v-once>{{title}}</h2>-->
-<!--        <h2 v-pre>{{title}}</h2>-->
+        <!--        <h1 v-text="title"></h1>-->
+        <!--        <h2 v-once>{{title}}</h2>-->
+        <!--        <h2 v-pre>{{title}}</h2>-->
 
-<!--        <button class="btn" @click="title='Test2'">Change name </button>-->
+        <!--        <button class="btn" @click="title='Test2'">Change name </button>-->
         <ul class="list" v-if="items.length">
             <li
                     class="list-item"
-                    v-for="(item, key) in items"
+                    v-for="(item, key) in eventItems"
                     @click="items.splice(key , 1)"
                     :key="item"
             >
@@ -33,12 +35,12 @@
                     {{ item }}
                 </strong>&nbsp;
 
-<!--                <input type="text" @click="stopPropagation" >-->
-                <input type="text" @click.stop >
+                <!--                <input type="text" @click="stopPropagation" >-->
+                <input type="text" @click.stop>
 
             </li>
         </ul>
-        <h3 v-show="items.length === 0">  no elements</h3>
+        <h3 v-show="items.length === 0"> no elements</h3>
     </div>
 </div>
 
