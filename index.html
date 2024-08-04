@@ -22,17 +22,23 @@
 <!--        <h2 v-pre>{{title}}</h2>-->
 
 <!--        <button class="btn" @click="title='Test2'">Change name </button>-->
-        <ul class="list">
+        <ul class="list" v-if="items.length">
             <li
                     class="list-item"
                     v-for="(item, key) in items"
                     @click="items.splice(key , 1)"
+                    :key="item"
             >
                 <strong>
                     {{ item }}
-                </strong>
+                </strong>&nbsp;
+
+<!--                <input type="text" @click="stopPropagation" >-->
+                <input type="text" @click.stop >
+
             </li>
         </ul>
+        <h3 v-show="items.length === 0">  no elements</h3>
     </div>
 </div>
 
