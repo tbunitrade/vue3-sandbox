@@ -24,11 +24,15 @@
         <!--        <h2 v-pre>{{title}}</h2>-->
 
         <!--        <button class="btn" @click="title='Test2'">Change name </button>-->
+
+        <div class="form-control">
+            <input type="text" @keyup.shift.enter.exact="addItem($event)" ref="myInput" >
+        </div>
         <ul class="list" v-if="items.length">
             <li
                     class="list-item"
-                    v-for="(item, key) in eventItems"
-                    @click="items.splice(key , 1)"
+                    v-for="(item, key) in items"
+                    @click.right.prevent="remove(i), log(item)"
                     :key="item"
             >
                 <strong>
