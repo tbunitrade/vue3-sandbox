@@ -53,11 +53,20 @@ const app = Vue.createApp({
 
 app.mount('#app')
 
-setTimeout(
-    () => {
-        app.unmount()
-    }, 3000
-)
+Vue.createApp(
+    {
+        data () {
+            return {
+                title: 'New title 2'
+            }
+        }
+    }
+).mount('#app2')
+// setTimeout(
+//     () => {
+//         app.unmount()
+//     }, 3000
+// )
 
 let title = 'MVP version VUE'
 let msg = 'Title of this : ' + title
