@@ -42,6 +42,12 @@ const app = Vue.createApp({
     },
     unmounted() {
         console.log('unmounted')
+    },
+    beforeUpdate() {
+        console.log('beforeUpdate')
+    },
+    updated() {
+        console.log('updated')
     }
 })
 
